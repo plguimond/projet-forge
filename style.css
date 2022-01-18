@@ -1,0 +1,1111 @@
+:root {
+  --gris: #232323;
+}
+
+/* ----reset des marges--- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- aucune déco par défaut sur les liens --- */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Aucun style sur les liste par défaut */
+ul {
+  list-style: none;
+}
+
+/* tous les titres en gras */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+
+/* -- couleur de fond et mise en page des texte --- */
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto Slab', arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 1rem;
+
+}
+
+/* container pour que le contenu ne dépasse pas de 1200px */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+/* ----------------bloc header ---------------- */
+#banner {
+  width: 100%;
+  background-color: var(--gris);
+
+}
+
+#banner #bandeau_tel {
+
+  width: 100%;
+  text-align: right;
+
+}
+
+#bandeau_tel a {
+  margin-right: 25px;
+  font-size: 1.1rem;
+}
+
+#bandeau_tel a:hover {
+  margin-right: 25px;
+  font-size: 1.3rem;
+  color: tomato;
+}
+
+#banner #contenu_header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+#banner #menuburger {
+  width: 20%;
+}
+
+#banner .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 58%;
+
+}
+
+.logo img {
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+}
+
+#banner .logo h1 {
+  color: white;
+
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+#banner #shopmenu {
+  width: 20%;
+
+}
+
+#banner #shopmenu ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 45px;
+  margin-right: 25px;
+}
+
+#banner #shopmenu li {
+  margin-left: 15px;
+}
+
+#banner #shopmenu a {
+  color: white;
+  font-size: 25px;
+}
+
+#banner #menu_grand {
+  display: none;
+}
+
+/* ---------------css menu burger--------- */
+
+
+/* ---positionnement du burger/croix-- */
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 45px;
+  left: 25px;
+  z-index: 1;
+  width: 100%;
+
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: var(--gris);
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+/* -----positionnement caché du menu ----- */
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+
+
+}
+
+/* ----permet au burger et à la croix d'être toujours en premier plan--- */
+#menuToggle span {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----mise en page de l'image burger et croix---- */
+#menuToggle #burgerimage i {
+  color: white;
+  font-size: 1.8rem;
+
+}
+
+#menuToggle #crossimage i {
+  font-size: 1.9rem;
+  color: var(--gris);
+  display: none;
+
+}
+
+
+/* -----cache le menu burger lorsquon ouvre le menu------ */
+#menuToggle input:checked+#burgerimage i {
+  display: none;
+}
+
+/* --------fait apparaitre la croix caché------ */
+#menuToggle input:checked~#crossimage i {
+  display: block;
+}
+
+/* mise en page du menu et traitement pour le glissé hors de l'écran */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: white;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s;
+
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/* -------------permet de faire apparaitre le menu------ */
+#menuToggle input:checked~ul {
+  transform: none;
+}
+
+/* ---------------------main--------------- */
+#content {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+#content img {
+  width: 100%;
+}
+
+#content h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#content h3 {
+  padding: 20px 0;
+  text-align: center;
+
+  background-color: var(--gris);
+}
+
+#content section {
+
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ---------bloc welcome----------- */
+
+#content .cadre_inset {
+
+  text-align: justify;
+  margin: 5px 10px;
+  padding: 20px 20px;
+  border: 4px solid var(--gris);
+  margin-bottom: 25px;
+  box-shadow: inset 0px 0px 15px 5px var(--gris);
+
+
+
+}
+
+#content .cadre_inset p {
+
+  padding: 5px 0;
+
+}
+
+
+
+
+/* ---------Slider-------------- */
+.slider-container {
+
+  display: flex;
+  width: 100%;
+  max-height: 720px;
+
+}
+
+.slider {
+
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* les slides sont côte à côte et son cachées */
+.slides {
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+/* ---mise en page des images dans le slide et de leur comportement--- */
+.slide {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 720px;
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  transform: scale(1);
+}
+
+.slide__image {
+  height: 100%;
+  width: 100%;
+}
+
+.slide a {
+  background: none;
+  border: none;
+}
+
+/* ---positionnement de la navigation--- */
+.slider__nav {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  text-align: center;
+}
+
+/* ---- mise en page des boutons de nav ---- */
+.slider__navlink {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 10px 0 10px;
+}
+
+.slider__navlink:hover {
+
+  height: 20px;
+  width: 20px;
+  background-color: tomato;
+
+}
+
+/* ---- mise en page du bouton blanc au centre ---- */
+#creation_button {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+  text-align: center;
+  font-size: 1.1rem;
+  background: white;
+  padding: 5px;
+}
+
+#creation_button a {
+  color: var(--gris);
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+#creation_button a:hover {
+  color: tomato;
+  box-shadow: 0 0 5px 5px white;
+  transition: ease 0.4s;
+  width: 100%;
+}
+
+/* --------bloc stage------------ */
+#internship .photo_stage p {
+  padding: 20px 30px;
+  text-align: justify;
+}
+
+
+#internship .photo_stage {
+  display: none;
+  background-color: var(--gris);
+
+}
+
+
+#internship .photo_stage:nth-child(2) {
+  display: block;
+}
+
+/* ------------bloc Boutique----------- */
+#shop .boutique {
+  position: relative;
+
+}
+
+#shop .boutique .shop_button {
+  position: absolute;
+  width: 250px;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  color: var(--gris);
+  text-align: center;
+  font-size: 1.1rem;
+  background: white;
+  padding: 5px;
+}
+
+#shop .boutique .shop_button:hover {
+  color: tomato;
+  box-shadow: 0 0 5px 5px white;
+  transition: ease 0.4s;
+}
+
+/* ---- bloc affutage non visible en mode mobile--- */
+#shop #affutage {
+  display: none;
+}
+
+/* --------------footer------------- */
+
+#foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+/* ---bloc nav réseaux sociaux--- */
+#menu_social {
+  width: 100%;
+
+}
+
+#menu_social ul {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+
+}
+
+#menu_social ul li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  border-right: 3px solid  rgba(255, 255, 255, 0.104);
+}
+
+#menu_social ul li:last-child {
+  border: none;
+}
+
+#menu_social i {
+  color: white;
+  font-size: 2rem;
+  padding: 10px 0;
+  transition: color 0.4s ease;
+}
+
+#menu_social i:hover {
+  color: tomato;
+}
+
+/* bloc aside */
+#foot_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.colonne {
+  width: 48%;
+  text-align: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+
+.colonne ul .colonne ul li {
+  padding: 2px;
+
+}
+
+.colonne h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.colonne a:hover {
+  color: tomato;
+  transition: color 0.4s ease;
+}
+
+#logo_bas {
+  margin: auto;
+  display: none;
+}
+
+#copyright {
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.bloc_gris {
+  background-color: var(--gris);
+  width: 100%;
+}
+
+/* ------------------bloc creations ---------------- */
+
+/* menu pour se déplacer sur une catégorie */
+#menu_produit {
+  width: 100%;
+  margin: 20px 0;
+
+}
+
+#menu_produit ul {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#menu_produit ul li {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  border-right: 3px solid rgba(255, 255, 255, 0.104);
+  
+}
+
+#menu_produit ul li:last-child {
+  border: none;
+}
+
+#menu_produit p {
+  color: white;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  transition: color 0.4s ease;
+}
+
+#menu_produit p:hover {
+  color: tomato;
+}
+
+/* -----mise en page des sections des produits présenté */
+
+#content .product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#content .product h3 {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+}
+
+#content .product a {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#content .product .card {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid var(--gris);
+  margin-bottom: 25px;
+  background-color: white;
+}
+
+
+#content section .card .contenu_card {
+
+  padding: 10px;
+  color: var(--gris);
+  width: 100%;
+}
+#content .product .contenu_card h4 {
+    
+  padding-bottom: 10px;
+}
+
+/* -------------------Page Contact------------- */
+
+#contact,
+#localisation,
+#adresse {
+  width: 100%;
+}
+
+#contact h2,
+#adresse h3,
+#localisation h3 {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* bloc formulaire */
+#contact {
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--gris);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  padding-bottom: 10px;
+}
+
+#contact p {
+  padding: 5px;
+  margin-left: 8px;
+
+}
+
+/* mise en page des label du formulaire */
+#contact label {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+}
+
+#contact label.petit {
+  width: 70px;
+}
+
+.petit_texte {
+  font-size: 0.8rem;
+}
+#contact label.petit_texte{
+  width: 90%;
+}
+
+/* ---mise en forme des boutons */
+#contact input[type=submit],
+#contact input[type=reset] {
+
+  background-color: white;
+  margin: 0 5px;
+  padding: 5px 15px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab';
+}
+
+#contact input[type=submit]:hover,
+#contact input[type=reset]:hover {
+  box-shadow: 0 0 5px 5px white;
+  transition: ease 0.4s;
+  color: tomato;
+}
+
+/* bloc adresse */
+#adresse {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  background-color: var(--gris);
+  margin-bottom: 40px;
+}
+
+#adresse address {
+  width: 370px;
+  padding-bottom: 15px;
+  margin-left: 8px;
+}
+
+/* bloc localisation */
+#localisation {
+  background-color: var(--gris);
+  margin-bottom: 40px;
+}
+
+#localisation iframe {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+/* bloc des pages descriptions produits */
+/* la mise en page du texte est faite dans la class cadre_inset */
+
+#description #description_produit p {
+  margin-bottom: 10px;
+}
+
+/* mise en forme du bouton retour */
+#content .bouton_retour {
+
+  display: block;
+  width: 150px;
+  color: var(--gris);
+  text-align: center;
+  font-size: 1.1rem;
+  background: white;
+  padding: 10px;
+  margin: 25px;
+}
+
+#content .bouton_retour:hover {
+  color: tomato;
+  box-shadow: 0 0 5px 5px white;
+  transition: ease 0.4s;
+
+}
+
+/* -----------media querries -------------- */
+
+@media screen and (min-width:768px) {
+
+  /* Peu de changement en +de 768, ajout d'information 
+      sur la page d'accueil et un menu bouton*/
+
+  /* -----------header--------- */
+
+
+  #banner .logo {
+
+    flex-direction: row;
+    width: 45%;
+    margin-left: 25px;
+
+  }
+
+  #banner .logo h1 {
+    text-align: left;
+    padding-left: 25px;
+
+  }
+
+  #banner #shopmenu {
+    width: 45%;
+  }
+
+  #banner #shopmenu ul {
+    margin-top: 37.5px;
+
+  }
+
+  /* --- cacher le menu burger --- */
+  #banner #menuburger {
+    display: none;
+  }
+
+  #banner #menu_grand {
+    display: block;
+    width: 100%;
+
+
+
+  }
+
+  #banner #menu_grand ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 25px;
+
+  }
+
+  #banner #menu_grand ul li {
+
+    padding: 10px 0;
+    width: 18%;
+    text-align: center;
+    background-color: white;
+
+  }
+
+  #banner #menu_grand ul li a {
+    color: var(--gris);
+    font-size: 1.2rem;
+  }
+
+
+
+  #banner #menu_grand ul li:hover {
+
+    box-shadow: 0 0 5px 5px white;
+    transition: ease 0.4s;
+  }
+
+  #banner #menu_grand ul li a:hover {
+    color: var(--gris);
+    color: tomato;
+    transition: ease 0.4s;
+  }
+
+  /* -----------main----------- */
+
+  #content .cadre_inset {
+    width: 80%;
+    margin: 25px auto;
+  }
+
+  #content #internship {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #internship h3 {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 25px;
+
+  }
+
+  #internship .photo_stage {
+    width: 100%;
+    margin-bottom: 15px;
+
+  }
+
+  /* ---- apparition d'une 2e image bloc stage */
+  #internship .photo_stage:nth-child(3) {
+    display: block;
+  }
+
+  /* ---------------footer------------- */
+  /* .colonne {
+    width: 31%;  
+  } */
+  /* #logo_bas {
+
+    display: block;
+  } */
+}
+
+@media screen and (min-width:992px) {
+
+  /* ------------ page index ----------------- */
+
+  /* -----------bloc welcome/creations--------- */
+
+  /* ---affichage côte à côte du bloc bienvenue et du slider */
+
+  #content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #content #welcome {
+    width: 30%;
+    margin-left: 25px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+  }
+
+  #content #welcome h2 {
+    margin-bottom: 30px;
+  }
+
+  #content #creations {
+    width: 60%;
+    margin-right: 25px;
+    margin-bottom: 50px;
+  }
+
+  /* -----------bloc stage----------- 
+     afficahge en côte à côte des images stage*/
+
+  #content #internship {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 0;
+    justify-content: space-between;
+  }
+
+  #content #internship h3 {
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  #content #internship p {
+
+    height: 70px;
+    text-align: left;
+
+
+  }
+
+  #content #internship .photo_stage {
+    width: 48%;
+
+  }
+
+  /* ---- apparition du 3e article stage ----- */
+  #content #internship .photo_stage:nth-child(4) {
+    display: block;
+  }
+
+  /* ------------bloc boutique-------------- */
+  #content #shop {
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #content #shop h3 {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 25px;
+  }
+
+  #content #shop .boutique {
+    width: 48%;
+
+  }
+
+  /* ---- display de l'article affutage ---- */
+  #shop #affutage {
+    display: block;
+  }
+
+  /* ----------page creations--------- */
+  #content #welcome_creations {
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 100%;
+  }
+
+  #content #menu_produit {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  #content .product {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    justify-content: space-between;
+  }
+
+  /* --affichage de deux produit de large --- */
+  #content .product .card {
+    width: 48%;
+  }
+
+  #content .product .card a {
+    width: 100%;
+  }
+
+ 
+
+  /* ----------------page contact--------- */
+
+  /* bloc formulaire et adresse côte à côte */
+  #contact {
+    width: 56%;
+    margin-left: 25px;
+  }
+
+  #adresse {
+    width: 36%;
+    height: 200px;
+    margin-right: 25px;
+
+  }
+
+  #localisation {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  /* Page description produits */
+
+  /* affihage de la description et de l'image côte à côte */
+  #description {
+    margin-right: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #description #description_produit {
+    width: 25%;
+    margin-top: 0;
+  }
+
+  #description img {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  #menuburger {
+    display: none;
+  }
+
+  /* suppression des marges */
+  /* header et index */
+  #banner #bandeau_tel a,
+  #banner #shopmenu ul,
+  #content #creations {
+    margin-right: 0;
+  }
+
+  #banner .logo,
+  #content #welcome {
+    margin-left: 0;
+  }
+
+  #banner #menu_grand ul,
+  #content #internship,
+  #content #shop {
+    margin: 0;
+  }
+
+  #banner #menu_grand ul {
+    margin-bottom: 10px;
+  }
+
+  /* --------marge contact------ */
+  #contact {
+    width: 58%;
+    margin-left: 0;
+  }
+
+  #adresse {
+    width: 38%;
+    margin-right: 0;
+  }
+
+  #localisation {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* --------marge page creation---- */
+  #content #welcome_creations {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #content #menu_produit {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #content .product {
+
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+
+  /* ----------page creations--------- */
+  #content .product {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* --- affichage de trois produits sur la mêmê ligne */
+  #content .product .card {
+    width: 31%;
+  }
+
+  #content .product .card a {
+    width: 100%;
+  }
+
+  /* Page description produits */
+  #description {
+    margin-right: 0;
+  }
+
+  #description #description_produit {
+    margin-left: 0;
+  }
+
+  #description .bouton_retour {
+    margin-left: 0;
+  }
+
+  /* ------footer---- */
+  #foot #menu_social {
+    margin-top: 25px;
+  }
+}
