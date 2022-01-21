@@ -229,6 +229,12 @@ body {
   transform: none;
 }
 
+.active{
+  
+  text-decoration: underline;
+  font-weight: bold;
+  
+}
 /* ---------------------main--------------- */
 #content {
   width: 100%;
@@ -808,7 +814,7 @@ body {
   }
 
   #banner #menu_grand ul li a:hover {
-    color: var(--gris);
+   
     color: tomato;
     transition: ease 0.4s;
   }

@@ -1,0 +1,22 @@
+<?php
+
+require_once ("Classes/Product.php");
+require_once ("Classes/Couteau.php");
+require_once ("Classes/Hache.php");
+require_once ("Classes/Epe.php");
+
+// int $id, string $picture, string $title, string $info, float $price
+
+$couteau1 = new Couteau(1, "Couteau artisanal",);
+$couteau2 = new Couteau();
+$couteau3 = new Couteau();
+
+$couteau1 = new Hache();
+$couteau1 = new Hache();
+$couteau1 = new Hache();
+
+$couteau1 = new Epe();
+$couteau1 = new Epe();
+$couteau1 = new Epe();
+
+

@@ -1,12 +1,18 @@
 <?php
 
-require_once ("Couteau.php");
+require_once ("Product.php");
 
 class Couteau extends Product
 {
 
-    public function __construct(){
+    function __construct(int $id, string $picture, string $title, string $info, float $price){
      
-        parent::__construct();
+        parent::__construct($id, $picture, $title, $info, $price);
+    }
+
+
+    public function name(){
+        return $this->getName();
     }
 }
+

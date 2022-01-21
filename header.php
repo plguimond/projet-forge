@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -79,9 +80,9 @@
             </nav>
         <!-- Grand menu bouton qui remplace le burger en plus grande résolution -->
             <nav id="menu_grand" class="container">
-                <ul>
+                <ul id="menuList">
                     
-                        <li><a href="index.php">Accueil</a></li>
+                        <li ><a href="index.php" class ="active">Accueil</a></li>
                     
                     
                         <li><a href="creations.php">Nos créations</a></li>
