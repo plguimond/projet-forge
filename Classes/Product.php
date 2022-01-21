@@ -16,5 +16,6 @@ abstract class Product{
         $this->title = $title;
         $this->info = [];
 
+        
 }
 }
