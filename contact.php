@@ -24,6 +24,18 @@
                 <input type="text" name="prenom" id="prenom" placeholder="tapez votre prénom">
             </p>
             <p>
+                <label for="cp">Code postal</label>
+                <input type="text" name="cp" id="cp" placeholder="Code postal">
+            </p>
+            <p>
+                <label for="ville">Ville</label>
+                <input type="text" name="ville" id="ville" placeholder="Ville">
+            </p>
+            <p>
+                <label for="adress">Adresse</label>
+                <input type="text" name="adress" id="adress" placeholder="adresse">
+            </p>
+            <p>
                 <label for="email">Votre Email *</label>
                 <input type="email" name="email" id="email" placeholder="tapez votre Email">
             </p>

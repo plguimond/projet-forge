@@ -2,7 +2,7 @@
 
 require_once ("Product.php");
 
-class Hache extends Product
+class Epee extends Product
 {
 
     function __construct(int $id, string $picture, string $title, string $accroche, string $info, float $price){

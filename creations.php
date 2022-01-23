@@ -72,7 +72,23 @@ require_once("Classes/createProduct.php")
     </section>
     <section id="hache" class="product">
         <h3>Nos haches</h3>
-        <article class="card">
+        <?php if (isset($haches)) {
+            foreach ($haches as $hache) {
+        ?>
+                <article class="card">
+                    <a href="haches.php?id=<?= array_search($hache, $haches); ?>">
+                        <img src=<?= $hache->picture(); ?> alt=<?= $hache->title(); ?>>
+                        <div class="contenu_card">
+                            <h4><?= $hache->title(); ?></h4>
+                            <p><?= $hache->accroche(); ?></p>
+                        </div>
+                    </a>
+                </article>
+        <?php
+            };
+        }; 
+        ?>
+        <!-- <article class="card">
             <a href="hache1.php">
                 <img src="images/hache1.jpg" alt="Tomahawk">
                 <div class="contenu_card">
@@ -98,11 +114,29 @@ require_once("Classes/createProduct.php")
                     <p>Petite hache compact pour le bushcraft</p>
                 </div>
             </a>
-        </article>
+        </article> -->
     </section>
     <section id="epe" class="product">
-        <h3>Nos épés</h3>
-        <article class="card">
+        <h3>Nos épées</h3>
+
+        <?php if (isset($epees)) {
+            foreach ($epees as $epee) {
+        ?>
+                <article class="card">
+                    <a href="epees.php?id=<?= array_search($epee, $epees); ?>">
+                        <img src=<?= $epee->picture(); ?> alt=<?= $epee->title(); ?>>
+                        <div class="contenu_card">
+                            <h4><?= $epee->title(); ?></h4>
+                            <p><?= $epee->accroche(); ?></p>
+                        </div>
+                    </a>
+                </article>
+        <?php
+            };
+        }; 
+        ?>
+
+        <!-- <article class="card">
             <a href="epe1.php">
                 <img src="images/katana-1280.jpg" alt="sabre japonais">
                 <div class="contenu_card">
@@ -129,7 +163,7 @@ require_once("Classes/createProduct.php")
                 </div>
             </a>
 
-        </article>
+        </article> -->
     </section>
 </main>
 
