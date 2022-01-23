@@ -40,8 +40,8 @@
     
 </footer>
 
-<script type="module" src="/js/supaBase.js"></script>
-<script src="/js/script.js"></script>
+<script type="module" src="supaBase.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

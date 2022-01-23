@@ -1,14 +1,17 @@
-<?php include("header.php");
+<?php
+include("header.php");
+require_once("Classes/createProduct.php")
+
 ?>
 <main id="content" class="container">
     <div id="welcome_creations" class="cadre_inset">
         <h2>Nos créations</h2>
         <p>Vous trouverez dans cette section les différentes créations que nous avons pu réaliser au cours des dernières
             années.
-            <p>Nous nous spécialisons dans la fabrication de couteaux, mais nous réalisons entre autres des haches et
-                différent type d'épées.</p>
-            <p>Toutes nos lames sont fabriquées en acier carbonne et certaines utilisent un procédé qui permet de souder
-                deux types d'acier et de faire apparaître un motif après trempage dans un acide.</p>
+        <p>Nous nous spécialisons dans la fabrication de couteaux, mais nous réalisons entre autres des haches et
+            différent type d'épées.</p>
+        <p>Toutes nos lames sont fabriquées en acier carbonne et certaines utilisent un procédé qui permet de souder
+            deux types d'acier et de faire apparaître un motif après trempage dans un acide.</p>
     </div>
 
     <!-- Navigation dans les catégories-->
@@ -31,16 +34,23 @@
     <!-- chaque section représente une catégories de produits avec ses articles -->
     <section id="couteau" class="product">
         <h3>Nos couteaux</h3>
-        <article class="card">
-            <a href="couteau1.php">
-                <img src="images/couteau1.jpg" alt="Couteau manche blanc">
-                <div class="contenu_card">
-                    <h4>Couteau artisanal</h4>
-                    <p>Couteau avec lame forgée style damas</p>
-                </div>
-            </a>
-        </article>
-        <article class="card">
+        <?php if (isset($couteaux)) {
+            foreach ($couteaux as $couteau) {
+        ?>
+                <article class="card">
+                    <a href="couteaux.php?id=<?= array_search($couteau, $couteaux); ?>">
+                        <img src=<?= $couteau->picture(); ?> alt=<?= $couteau->title(); ?>>
+                        <div class="contenu_card">
+                            <h4><?= $couteau->title(); ?></h4>
+                            <p><?= $couteau->accroche(); ?></p>
+                        </div>
+                    </a>
+                </article>
+        <?php
+            };
+        };
+        ?>
+        <!-- <article class="card">
             <a href="couteau2.php">
                 <img src="images/couteau2.jpg" alt="couteau et etui en cuir">
                 <div class="contenu_card">
@@ -57,7 +67,7 @@
                     <p>Petit couteau avec manche bi-matière</p>
                 </div>
             </a>
-        </article>
+        </article> -->
 
     </section>
     <section id="hache" class="product">
