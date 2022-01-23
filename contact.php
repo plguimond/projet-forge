@@ -24,16 +24,10 @@
                 <input type="text" name="prenom" id="prenom" placeholder="tapez votre prénom">
             </p>
             <p>
-                <label for="cp">Code postal</label>
-                <input type="text" name="cp" id="cp" placeholder="Code postal">
-            </p>
-            <p>
-                <label for="ville">Ville</label>
-                <input type="text" name="ville" id="ville" placeholder="Ville">
-            </p>
-            <p>
-                <label for="adress">Adresse</label>
-                <input type="text" name="adress" id="adress" placeholder="adresse">
+                <label for="address">Adresse</label>
+                <input type="select" name="adress" id="address" placeholder="adresse" >
+                <ul id = "addressName"></ul>
+                <!-- <datalist id="addressName"> </datalist> -->
             </p>
             <p>
                 <label for="email">Votre Email *</label>
@@ -66,7 +60,7 @@
             </p>
             <p class="petit_texte">* Les champs marqués d'une étoile sont obligatoire.</p>
         </form>
-       
+
 
     </div>
     <!-- bloc adresse -->
