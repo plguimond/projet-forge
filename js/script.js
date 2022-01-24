@@ -1,17 +1,17 @@
 //  ******** menu page active *********
 
-let menuList = document.getElementById('menuList');
-let a = menuList.getElementsByTagName('a');
 
+let menu = document.getElementById("menu").getElementsByTagName("a");
+let menuList = document.getElementById("menuList").getElementsByTagName("a");
 
-
-// a.addEventListener('click', function() {
-//     console.log('hello');
-//         if (a.classList !== "active"){
-//             a.classList = "active";
-//         }
-
-// }) 
+for (var i = 0; (i < menuList.length) && (i < menu.length); i++) {
+    if ((menuList[i].href === location.href) && (menu[i].href === location.href)) {
+            menuList[0].classList.remove("active");
+            menu[0].classList.remove("active");
+            menuList[i].classList.add("active");
+            menu[i].classList.add("active");
+    }
+}
 
 
 //           ******** API Adresse Gouv *********

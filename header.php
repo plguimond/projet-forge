@@ -49,7 +49,7 @@
               -->
                         <ul id="menu">
                             
-                                <li><a href="index.php">Accueil</a></li>
+                                <li><a href="index.php" class = "active" >Accueil</a></li>
                             
                             
                                 <li><a href="creations.php">Nos créations</a></li>
