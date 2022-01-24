@@ -1,11 +1,44 @@
 <?php include("header.php");
+require_once "fonctions/contact.php";
+
+
+if (!empty($_POST)) {
+    $erreurs = contact();
+}
+
 ?>
+
 
 <main id="content" class="container">
     <!--  bloc prise de contact avec un formulaire -->
     <div id="contact">
         <h2>Laissez-nous un message</h2>
-        <form action="envoyerform.php" method="post">
+        <form action="" method="post">
+        <?php
+        if (isset($erreurs)) :
+            if ($erreurs) :
+                foreach($erreurs as $erreur):
+
+        ?>
+                 <div class="row">
+                    <div class="col-xs-12">
+                        <div class="message erreur"><?= $erreur ?></div>
+                    </div>
+                </div>
+            <?php
+            endforeach;
+            else :
+            ?>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="message confirmation">Votre message à été envoyé.</div>
+                    </div>
+                </div>
+
+        <?php
+            endif;
+        endif;
+        ?>
             <!-- choix du genre -->
             <p>
                 <input type="radio" name="civilite" id="civilitem" value="M" checked>
@@ -14,44 +47,46 @@
                 <label for="civilitef">Mme</label>
 
             </p>
+            
             <!--  coordonnées  -->
             <p>
                 <label for="nom">Votre nom *</label>
-                <input type="text" name="nom" id="nom" placeholder="tapez votre nom">
+                <input type="text" name="nom" id="nom" placeholder="tapez votre nom"
+                value="<?php if(isset($_POST["nom"])) echo $_POST["nom"] ?>">
             </p>
             <p>
                 <label for="prenom">Votre prénom *</label>
-                <input type="text" name="prenom" id="prenom" placeholder="tapez votre prénom">
+                <input type="text" name="prenom" id="prenom" placeholder="tapez votre prénom" value="<?php if(isset($_POST["prenom"])) echo $_POST["prenom"] ?>">
             </p>
             <p>
                 <label for="address">Adresse</label>
-                <input type="select" name="adress" id="address" placeholder="adresse" >
+                <input type="select" name="address" id="address" placeholder="adresse" value="<?php if(isset($_POST["address"])) echo $_POST["address"] ?>" >
                 <ul id = "addressName"></ul>
                 <!-- <datalist id="addressName"> </datalist> -->
             </p>
             <p>
                 <label for="email">Votre Email *</label>
-                <input type="email" name="email" id="email" placeholder="tapez votre Email">
+                <input type="email" name="email" id="email" placeholder="tapez votre Email" value="<?php if(isset($_POST["email"])) echo $_POST["email"] ?>">
             </p>
             <p>
                 <label for="tel">Votre téléphone</label>
                 <input type="tel" name="tel" id="tel" placeholder="06 01 02 03 04">
             </p>
             <!-- checkbox pour préciser l'objet du message  -->
-            <p>Objet
-                <input type="checkbox" name="objet" id="stage" value="">
-                <label for="stage" class="petit">Stage</label>
-                <input type="checkbox" name="objet" id="achat" value="">
+            <!-- <p>Objet
+                <input type="checkbox" name="objet" id="stage" value="<?php if(isset($_POST["stage"])) echo $_POST["stage"] ?>">
+                <label for="stage" class="petit">Stage</label >
+                <input type="checkbox" name="objet" id="achat" value="<?php if(isset($_POST["achat"])) echo $_POST["achat"] ?>">
                 <label for="achat" class="petit">Achat</label>
-                <input type="checkbox" name="objet" id="autre" value="">
+                <input type="checkbox" name="objet" id="autre" value="<?php if(isset($_POST["autre"])) echo $_POST["autre"] ?>">
                 <label for="autre" class="petit">Autre</label>
-            </p>
+            </p> -->
             <!-- textarea pour saisir son message -->
-            <p><label for="message">Votre message</label> </p>
-            <p><textarea name="message" id="message" cols="37" rows="8"></textarea></p>
+            <p><label for="message">Votre message *</label> </p>
+            <p><textarea name="message" id="message" cols="37" rows="8" value="<?php if(isset($_POST["message"])) echo $_POST["message"] ?>"></textarea></p>
             <!--  bouton envoyer et annuler  -->
             <p>
-                <input type="checkbox" name="consentement" id="rgpd" value="">
+                <input type="checkbox" name="rgpd" id="rgpd">
                 <label for="rgpd" class="petit_texte">J'accepte les conditions générales.</label>
             </p>
             <p>
@@ -83,5 +118,7 @@
 
 </main>
 
-<?php include("footer.php");
+<?php 
+
+    include("footer.php");
     ?>

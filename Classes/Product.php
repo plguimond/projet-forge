@@ -20,7 +20,7 @@ abstract class Product{
 }
 
 
-protected function getId():string
+protected function getId():int
 {
     return $this->id;
 }

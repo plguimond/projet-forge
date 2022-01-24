@@ -12,7 +12,7 @@ class Couteau extends Product
     }
 
 
-    public function id(): string
+    public function id(): int
     {
         return $this->getId();
     }
@@ -35,5 +35,6 @@ class Couteau extends Product
     public function price(): string
     {
         return $this->getPrice();
+        
     }
 }

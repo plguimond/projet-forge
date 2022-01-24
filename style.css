@@ -613,6 +613,25 @@ body {
 }
 
 /* -------------------Page Contact------------- */
+form .message {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: .9em;
+  padding: 10px;
+  color: #fff;
+  line-height: 1.3em
+}
+
+form .erreur {
+  background: #cf5f5f;
+  border-bottom: 2px solid #ad3434
+}
+
+form .confirmation {
+  background: #5fcf80;
+  border-bottom: 2px solid #34ad58
+}
+
 
 #contact,
 #localisation,

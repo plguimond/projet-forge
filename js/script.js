@@ -1,3 +1,5 @@
+//  ******** menu page active *********
+
 let menuList = document.getElementById('menuList');
 let a = menuList.getElementsByTagName('a');
 
@@ -16,11 +18,12 @@ let a = menuList.getElementsByTagName('a');
 
 
 let dataList = document.getElementById('addressName');
-let address = document.querySelector('#address')
+let address = document.querySelector('#address');
 
 address.addEventListener('input', function search() {
     let input = address.value;
     dataList.innerHTML = "";
+    console.log(input.length)
     if (input.length > 0) {
         let url = "https://api-adresse.data.gouv.fr/search/?q=" + input + "&limit=5";
 
@@ -41,11 +44,14 @@ address.addEventListener('input', function search() {
 
                         li.addEventListener('click', () => {
                             address.value = li.innerText;
-                            search();
+                            dataList.innerHTML = "";
+
                         })
                     }
                 }
 
             })
+    }else{
+        dataList.innerHTML = "";  
     }
 })
