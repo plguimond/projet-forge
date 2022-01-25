@@ -6,10 +6,10 @@ $id = (int)$_GET["id"];
     <figure id="description">
 
         <figcaption id="description_produit" class="cadre_inset">
-            <h2><?= $couteaux[$id]->title(); ?></h2>
-            <?= $couteaux[$id]->info(); ?>
+            <h2><?= $couteaux[$id]->getTitle(); ?></h2>
+            <?= $couteaux[$id]->getInfo(); ?>
         </figcaption>
-        <img src=<?= $couteaux[$id]->picture(); ?> alt=<?= $couteaux[$id]->picture(); ?>>
+        <img src=<?= $couteaux[$id]->getPicture(); ?> alt=<?= $couteaux[$id]->getPicture(); ?>>
        
     </figure>
     <a href="creations.php#couteau" class="bouton_retour">Retour</a>

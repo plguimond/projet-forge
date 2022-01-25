@@ -20,28 +20,28 @@ abstract class Product{
 }
 
 
-protected function getId():int
+public function getId():int
 {
     return $this->id;
 }
 
-protected function getTitle():string
+public function getTitle():string
 {
     return $this->title;
 }
-protected function getPicture():string
+public function getPicture():string
 {
     return $this->picture;
 }
-protected function getAccroche():string
+public function getAccroche():string
 {
     return $this->accroche;
 }
-protected function getInfo():string
+public function getInfo():string
 {
     return $this->info;
 }
-protected function getPrice():string
+public function getPrice():string
 {
     return $this->price;
 }
