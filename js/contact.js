@@ -8,8 +8,7 @@ address.addEventListener('input', function search() {
 
     let input = address.value;
     dataList.innerHTML = "";
-    console.log(input.length)
-    if (input.length > 5) {
+    if (input.length > 0) {
         let url = "https://api-adresse.data.gouv.fr/search/?q=" + input + "&limit=5";
 
         
@@ -42,38 +41,7 @@ address.addEventListener('input', function search() {
 })
 
 
-// ************* données du formulaire **************
 
-
-
-
-let sendForm = document.getElementById('sendForm');
-let genders = document.getElementsByName('civilite');
-let gender = "";
-let lastName = document.getElementById('nom');
-let firstName = document.getElementById('prenom');
-let adresse = document.getElementById('address');
-let email = document.getElementById('email')
-let phone = document.getElementById('tel')
-let message = document.getElementById('message')
-let rgpd = document.getElementById('rgpd');
-genders.forEach(element => {
-    if (element.checked == true){
-      gender = element.value
-    }
-});
-
-
-sendForm.addEventListener('click', function send(){
-    
-if (rgpd.cheked == true || lastName.value != "" || firstName.value != "" || email.value != "" || message.value != "" )
-const { data, error } = await supabase
-  .from('formulaire')
-  .insert([
-    { civilite: gender, nom: lastName.value, prenom: firstName.value, tel: phone.value, message: message.value, email: email.value  },
-  ])
-
-});
 
 
 

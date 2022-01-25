@@ -77,7 +77,7 @@ $haches = [$hache1, $hache2, $hache3];
 $epee1 = new Epee(
     1,
     "images/katana-1280.jpg",
-    "Tomahawk",
+    "Katana",
     "Magnifique katana avec lame forgée à la main",
     "<p>Ce sabre de style japonais reprend les bases du Katana avec sa longue lame incurvée.</p>
         <p>L'acier de cette épéé est noirci par un trempage dans l'acide.</p>
@@ -106,3 +106,13 @@ $epee3 = new Epee(
     1199.99
 );
 $epees = [$epee1, $epee2, $epee3];
+
+// $produits = [$couteaux, $haches, $epees ];
+
+// foreach($produits as $produit){
+//       foreach($produit as $element){
+//          echo $element->getTitle().PHP_EOL;
+//       }  
+
+// }
+// echo $produits[0][1]->getTitle();

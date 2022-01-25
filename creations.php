@@ -39,10 +39,10 @@ require_once("Classes/createProduct.php")
         ?>
                 <article class="card">
                     <a href="couteaux.php?id=<?= array_search($couteau, $couteaux); ?>">
-                        <img src=<?= $couteau->picture(); ?> alt=<?= $couteau->title(); ?>>
+                        <img src=<?= $couteau->getPicture(); ?> alt=<?= $couteau->getTitle(); ?>>
                         <div class="contenu_card">
-                            <h4><?= $couteau->title(); ?></h4>
-                            <p><?= $couteau->accroche(); ?></p>
+                            <h4><?= $couteau->getTitle(); ?></h4>
+                            <p><?= $couteau->getAccroche(); ?></p>
                         </div>
                     </a>
                 </article>
@@ -77,10 +77,10 @@ require_once("Classes/createProduct.php")
         ?>
                 <article class="card">
                     <a href="haches.php?id=<?= array_search($hache, $haches); ?>">
-                        <img src=<?= $hache->picture(); ?> alt=<?= $hache->title(); ?>>
+                        <img src=<?= $hache->getPicture(); ?> alt=<?= $hache->getTitle(); ?>>
                         <div class="contenu_card">
-                            <h4><?= $hache->title(); ?></h4>
-                            <p><?= $hache->accroche(); ?></p>
+                            <h4><?= $hache->getTitle(); ?></h4>
+                            <p><?= $hache->getAccroche(); ?></p>
                         </div>
                     </a>
                 </article>
@@ -124,10 +124,10 @@ require_once("Classes/createProduct.php")
         ?>
                 <article class="card">
                     <a href="epees.php?id=<?= array_search($epee, $epees); ?>">
-                        <img src=<?= $epee->picture(); ?> alt=<?= $epee->title(); ?>>
+                        <img src=<?= $epee->getPicture(); ?> alt=<?= $epee->getTitle(); ?>>
                         <div class="contenu_card">
-                            <h4><?= $epee->title(); ?></h4>
-                            <p><?= $epee->accroche(); ?></p>
+                            <h4><?= $epee->getTitle(); ?></h4>
+                            <p><?= $epee->getAccroche(); ?></p>
                         </div>
                     </a>
                 </article>

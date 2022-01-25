@@ -1,10 +1,10 @@
 <?php include("header.php");
-require_once "fonctions/contact.php";
+// require_once "fonctions/contact.php";
 
 
-if (!empty($_POST)) {
-    $erreurs = contact();
-}
+// if (!empty($_POST)) {
+//     $erreurs = contact();
+// }
 
 ?>
 
@@ -76,14 +76,13 @@ if (!empty($_POST)) {
             </p>
             <p>
                 <label for="tel">Votre téléphone</label>
-                <input type="tel" name="tel" id="tel" placeholder="06 01 02 03 04">
+                <input type="tel" name="tel" id="tel" placeholder="06 01 02 03 04" value="<?php if(isset($_POST["tel"])) echo $_POST["tel"] ?>">
             </p>
             <!-- checkbox pour préciser l'objet du message  -->
            
             <!-- textarea pour saisir son message -->
             <p><label for="message">Votre message *</label> </p>
-            <p><textarea name="message" id="message" cols="37" rows="8"
-                    value="<?php if(isset($_POST["message"])) echo $_POST["message"] ?>"></textarea></p>
+            <p><textarea name="message" id="message" cols="37" rows="8"><?php if(isset($_POST["message"])) echo $_POST["message"] ?></textarea></p>
             <!--  bouton envoyer et annuler  -->
             <p>
                 <input type="checkbox" name="rgpd" id="rgpd">
@@ -114,12 +113,12 @@ if (!empty($_POST)) {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.878632174713!2d-2.777220584368047!3d47.64792527918737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48101c1ee660f85f%3A0x37b8927e9d6ad86b!2sGRETA%20de%20Bretagne%20Sud%20-%20Agence%20de%20Vannes!5e0!3m2!1sfr!2sfr!4v1637488471766!5m2!1sfr!2sfr"
             height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script type="module" src="js/supaBase.js"></script>
     <script type="module" src="js/contact.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script type="module" src="js/supaBase.js"></script>
 </main>
 
 <?php 
-
+    
     include("footer.php");
     ?>
