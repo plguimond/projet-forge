@@ -27,7 +27,9 @@ h4 {
   font-weight: bold;
 }
 
-
+.hidden{
+  display: none
+}
 /* -- couleur de fond et mise en page des texte --- */
 body {
   background-color: black;

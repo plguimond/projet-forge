@@ -41,7 +41,7 @@ public function getInfo():string
 {
     return $this->info;
 }
-public function getPrice():string
+public function getPrice():float
 {
     return $this->price;
 }

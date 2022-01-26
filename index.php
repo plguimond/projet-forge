@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <!-- trois points qui permettent de basculer les images -->
-                    <div class="slider__nav">
+                    <div class="slider__nav"></div>
                         <a class="slider__navlink" href="#slides__1"></a>
                         <a class="slider__navlink" href="#slides__2"></a>
                         <a class="slider__navlink" href="#slides__3"></a>

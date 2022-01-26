@@ -89,8 +89,8 @@
                 <label for="rgpd" class="petit_texte">J'accepte les conditions générales.</label>
             </p>
             <p>
-                <input type="submit" value="Envoyer" id = "sendForm">
-                <input type="reset" value="Annuler">
+                <input type="submit" value="Envoyer" id = "sendForm" class="hidden">
+                <input type="reset" value="Annuler" id="cancelForm">
             </p>
             <p class="petit_texte">* Les champs marqués d'une étoile sont obligatoire.</p>
         </form>

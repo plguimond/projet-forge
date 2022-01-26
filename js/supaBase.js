@@ -16,12 +16,27 @@ supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
 let sendForm = document.getElementById('sendForm');
+let cancelForm = document.getElementById('cancelForm');
+let rgpd = document.getElementById('rgpd');
 
+// fait apparaître le bouton envoyer que si la case rgpd est checked
+rgpd.addEventListener("click", function () {
 
+    sendForm.classList.toggle('hidden')
+})
+
+// relance la page et vide le formulaire sur l'appuie du bouton annuler
+cancelForm.addEventListener('click', function () {
+    window.location.href = "/projet-forge/contact.php";
+})
+
+// evènement lors du click bouton envoyer 
 sendForm.addEventListener('click', send());
 
-
+// function pour l'évènement envoyer
 async function send() {
+
+    // récupérer dans le DOM les données du form
     let genders = document.getElementsByName('civilite');
     let gender = "";
     let lastName = document.getElementById('nom').value;
@@ -30,21 +45,19 @@ async function send() {
     let email = document.getElementById('email').value;
     let phone = document.getElementById('tel').value;
     let message = document.getElementById('message').value;
-    let rgpd = document.getElementById('rgpd');
-  
 
-   
-
-
-
+    //boucle pour récupérer la valeur du bouton radio sélectionné
     genders.forEach(element => {
         if (element.checked == true) {
             gender = element.value;
         }
     });
 
+    // conditions qui vérifie que les champs obligatoire sont remplis avant d'envoyer dans supabase
     if (lastName != "" && firstName != "" && email != "" && message != "") {
 
+
+        //insert dans supabase des valeurs du formulaire récupéré
         const {
             data,
             error
@@ -60,6 +73,7 @@ async function send() {
                 address: adresse
             }]);
 
+        // rafraichi la page une fois le formulaire envoyé pour éviter double envoie.
         window.location.href = "/projet-forge/contact.php";
     }
 }
